@@ -5,7 +5,7 @@ const registrationModel = [{
     name: 'name',
     label: 'Name',
     type: 'text',
-    inputParser: parseOnlyLetterAndSpace,
+    parseFun: parseOnlyLetterAndSpace,
     validators: [{
         id: 'name-length',
         isValidFun: expression => checkAtLeastLength(expression, 3),
@@ -56,7 +56,7 @@ const registrationModel = [{
     name: 'description',
     label: 'Description',
     type: 'textarea',
-    inputParser: expression => parseLength(expression, 2000),
+    parseFun: expression => parseLength(expression, 2000),
     validators: [{
         id: 'description-required',
         isValidFun: checkIsfilled,

@@ -21,7 +21,7 @@ const useForm = (initModel, submitCallback) => {
     inputs.some(i => i.alert) ? setInputs([...inputs]) : submitCallback();
   };
 
-  const parseInput = input => input.value = input.inputParser ? input.inputParser(input.value) : input.value;
+  const parseInput = input => input.value = input.parseFun ? input.parseFun(input.value) : input.value;
 
   const validateInput = input => {
     let alert = null;
